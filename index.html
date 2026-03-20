@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spring Break Peptide Consult | Medically Guided Care</title>
+  <meta name="description" content="Book a $30 peptide consultation and get 10-15% off your first protocol. Medically guided care for fat loss, recovery, energy, and wellness." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f5fbf7;
+      --surface: #ffffff;
+      --ink: #0d2a29;
+      --muted: #43615f;
+      --brand: #128f85;
+      --brand-dark: #0b6b63;
+      --accent: #ffad5b;
+      --border: #d7ece7;
+      --shadow: 0 22px 50px rgba(12, 44, 41, 0.12);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 90% -5%, #d9fff0 0%, transparent 60%),
+        radial-gradient(900px 500px at 5% 5%, #fff0d6 0%, transparent 55%),
+        var(--bg);
+      line-height: 1.45;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 12px;
+      font-family: "Sora", sans-serif;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    p { margin: 0 0 14px; color: var(--muted); }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .top-note {
+      padding: 10px 14px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: #e8fbf7;
+      border-bottom: 1px solid #cceee6;
+      font-weight: 600;
+    }
+
+    .top-cta {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #d8ece6;
+    }
+
+    .top-cta-inner {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      border-radius: 999px;
+      border: 1px solid #c9e6df;
+      background: #fff;
+      color: var(--ink);
+      font-family: "Sora", sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 14px;
+    }
+
+    .mini-btn.primary {
+      color: #fff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      box-shadow: 0 10px 18px rgba(9, 83, 76, 0.2);
+    }
+
+    .hero {
+      padding: 82px 0 50px;
+      display: grid;
+      gap: 22px;
+      align-items: center;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #e4faf6;
+      color: var(--brand-dark);
+      border: 1px solid #c2ebe3;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+
+    .hero-copy p { font-size: 1.1rem; max-width: 60ch; }
+
+    .hero-list {
+      padding: 0;
+      margin: 18px 0 22px;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .hero-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-list li::before {
+      content: "+";
+      color: var(--brand);
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-family: "Sora", sans-serif;
+      padding: 14px 24px;
+      box-shadow: 0 14px 30px rgba(9, 83, 76, 0.24);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 35px rgba(9, 83, 76, 0.3);
+    }
+
+    .urgent {
+      display: block;
+      margin-top: 10px;
+      color: #9d4a00;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -90px auto;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 35%, #fff8e4 0%, #ffd7a8 48%, #ffbf79 100%);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .hero-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card p,
+    .hero-card ul {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--ink);
+    }
+
+    section {
+      padding: 52px 0;
+      border-top: 1px solid #e6f3ef;
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 18px;
+    }
+
+    .offer-grid,
+    .benefit-grid,
+    .trust-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 12px 24px rgba(17, 61, 56, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .card p { margin-bottom: 0; }
+
+    .offer-highlight {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: #fff5e8;
+      color: #92511a;
+      border: 1px solid #ffd7ad;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .split {
+      display: grid;
+      gap: 24px;
+      align-items: start;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .bullet-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .cta-block {
+      background: linear-gradient(160deg, #e7fbf7 0%, #fef9ed 100%);
+      border: 1px solid #dcefe9;
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .cta-block p {
+      max-width: 60ch;
+      margin: 0 auto 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+      max-width: 580px;
+    }
+
+    .embed-wrap {
+      width: 100%;
+      min-height: 650px;
+      border: 1px solid #c8e4de;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .embed-wrap iframe {
+      width: 100%;
+      height: 650px;
+      border: 0;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #c8e4de;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    input:focus {
+      outline: 2px solid #9fe3d9;
+      border-color: var(--brand);
+      outline-offset: 1px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #577573;
+      margin-top: 8px;
+    }
+
+    footer {
+      padding: 36px 0;
+      color: #51706e;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .offer-grid,
+      .benefit-grid,
+      .trust-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-note">If you're reading this, you may be considering a medical approach to weight loss, recovery, energy, or overall wellness.</div>
+  <nav class="top-cta" aria-label="Quick actions">
+    <div class="top-cta-inner">
+      <a class="mini-btn primary" href="https://api.leadconnectorhq.com/widget/booking/y1R25E5XwdauwTbCcqAN" target="_blank" rel="noopener noreferrer">Book $30 Consult</a>
+      <a class="mini-btn" href="#offer">Spring Break Offer</a>
+      <a class="mini-btn" href="#what-we-do">What We Do</a>
+      <a class="mini-btn" href="#benefits">Benefits</a>
+      <a class="mini-btn" href="#trust">Why Trust Us</a>
+      <a class="mini-btn" href="#lead">Get Info First</a>
+    </div>
+  </nav>
+
+  <header class="container hero" id="top">
+    <div class="hero-copy">
+      <span class="eyebrow">Spring Break Offer</span>
+      <h1>Spring Break Reset Starts Here</h1>
+      <p>
+        Medically guided peptide therapy designed to support weight loss, improve day-to-day energy,
+        and help recovery feel more consistent as you move into spring and summer.
+      </p>
+      <ul class="hero-list">
+        <li>Fat loss support</li>
+        <li>Energy and recovery</li>
+        <li>Hormone optimization</li>
+      </ul>
+      <a class="btn" href="#book">Book Your $30 Consult</a>
+      <span class="urgent">Limited Spring Break Availability</span>
+    </div>
+
+    <aside class="hero-card" aria-label="Spring break consultation details">
+      <h3>Not a shortcut. A medical approach.</h3>
+      <p>
+        Every consultation is focused on your goals, history, and lab-informed planning when appropriate.
+        All protocols are medically guided and tailored to the individual.
+      </p>
+      <ul>
+        <li>$30 paid consult credited toward treatment</li>
+        <li>10-15% off your first peptide protocol</li>
+        <li>In-clinic consultation with a real provider</li>
+      </ul>
+      <span class="offer-highlight">Spring Break slots are limited.</span>
+    </aside>
+  </header>
+
+  <main>
+    <section id="offer">
+      <div class="container">
+        <div class="section-head">
+          <h2>Spring Break Offer</h2>
+          <p>Simple, transparent, and easy to act on.</p>
+        </div>
+        <div class="offer-grid">
+          <article class="card">
+            <h3>$30 Consultation</h3>
+            <p>Your paid consultation is credited toward treatment when you move forward.</p>
+          </article>
+          <article class="card">
+            <h3>10-15% Off First Protocol</h3>
+            <p>New patients can receive a limited-time discount on their first medically guided protocol.</p>
+          </article>
+          <article class="card">
+            <h3>Consultation At Clinic</h3>
+            <p>Consultations happen at the clinic with a provider, not at the event.</p>
+          </article>
+        </div>
+        <p class="offer-highlight">Spots are limited and filling quickly.</p>
+      </div>
+    </section>
+
+    <section id="what-we-do">
+      <div class="container split">
+        <div>
+          <h2>What Peptide Therapy Is</h2>
+          <p>
+            Peptides are short chains of amino acids that act as signaling molecules in the body. In clinical care,
+            they may be used to support targeted goals based on your individual health profile.
+          </p>
+          <p>
+            We focus on progress that is realistic and measurable, not hype.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Areas of Focus</h3>
+          <ul class="bullet-list">
+            <li>Fat loss and body composition support</li>
+            <li>Recovery and performance support</li>
+            <li>Energy and day-to-day wellness</li>
+            <li>Longevity-minded optimization</li>
+          </ul>
+          <p class="small">All protocols are medically guided and tailored to the individual.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits">
+      <div class="container">
+        <div class="section-head">
+          <h2>Benefits You Can Feel</h2>
+          <p>Spring Break is your reset point. Energy, recovery, and weight loss, done right.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="card">
+            <h3>Fat Loss Support</h3>
+            <p>Structured plans to help reduce body fat while preserving overall wellness goals.</p>
+          </article>
+          <article class="card">
+            <h3>Energy and Recovery</h3>
+            <p>Support for faster bounce-back, better training consistency, and improved daily output.</p>
+          </article>
+          <article class="card">
+            <h3>Long-Term Wellness</h3>
+            <p>Provider-guided strategies focused on sustainable outcomes rather than quick fixes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <div class="section-head">
+          <h2>Care You Can Trust</h2>
+          <p>If you're reading this, you may be considering a medical approach to weight loss, recovery, energy, or overall wellness.</p>
+        </div>
+        <div class="trust-grid">
+          <article class="card">
+            <h3>Medically Guided Care</h3>
+            <p>Every step is overseen by qualified medical professionals.</p>
+          </article>
+          <article class="card">
+            <h3>Personalized Protocols</h3>
+            <p>Recommendations are based on your history, goals, and response over time.</p>
+          </article>
+          <article class="card">
+            <h3>Not One-Size-Fits-All</h3>
+            <p>You get a plan built for you, not a generic template.</p>
+          </article>
+        </div>
+        <p class="small">Testimonial placeholder: "I talked to a real provider and finally had a clear plan."</p>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="container cta-block">
+        <h2>Book Your Spring Break Consult</h2>
+        <p>
+          Reserve your $30 consult, get guidance from a real provider, and unlock a 10-15% discount opportunity on your first peptide protocol.
+        </p>
+        <a class="btn" href="https://api.leadconnectorhq.com/widget/booking/y1R25E5XwdauwTbCcqAN" target="_blank" rel="noopener noreferrer">Schedule Now</a>
+        <p class="urgent">Spring Break slots are limited.</p>
+        <p class="small">Prefer staying on page? Use the live scheduler below.</p>
+        <div class="embed-wrap" aria-label="Booking calendar">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/booking/y1R25E5XwdauwTbCcqAN"
+            title="Schedule your consultation"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="lead">
+      <div class="container split">
+        <div>
+          <h2>Learn More Before You Commit</h2>
+          <p>
+            Want details first? Leave your information and our team will share how consultation and treatment planning works.
+          </p>
+          <p>Don't go into summer feeling the same.</p>
+        </div>
+        <div>
+          <div class="embed-wrap" aria-label="Lead capture form">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/hGtUi1Qfo7UCubnmdnfl"
+              title="Get started form"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="small">This is connected to your existing CRM form flow.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Peptide-focused consult landing page for Spring Break promotion.</p>
+    </div>
+  </footer>
+</body>
+</html>
