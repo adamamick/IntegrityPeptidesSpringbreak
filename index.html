@@ -16,6 +16,15 @@
   <meta name="twitter:image" content="/graph.png" />
   <link rel="icon" type="image/png" href="/graph.png" />
   <link rel="apple-touch-icon" href="/graph.png" />
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1274596536964214');
+    fbq('track', 'PageView');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -375,6 +384,12 @@
   </style>
 </head>
 <body>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1274596536964214&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
   <div class="top-note">If you're reading this, you may be considering a medical approach to weight loss, recovery, energy, or overall wellness.</div>
   <nav class="top-cta" aria-label="Quick actions">
     <div class="top-cta-inner">
@@ -563,5 +578,41 @@
       <p>Medically guided peptide care for fat loss, recovery, energy, and long-term wellness.</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      function trackAndPush(eventName, payload) {
+        if (typeof fbq === "function") {
+          fbq("trackCustom", eventName, payload || {});
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: eventName,
+          meta_payload: payload || {}
+        });
+      }
+
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest("a[href]");
+        if (!link) return;
+        var href = link.getAttribute("href") || "";
+        var text = (link.textContent || "").trim();
+
+        if (href.indexOf("widget/booking/") !== -1) {
+          if (typeof fbq === "function") {
+            fbq("track", "InitiateCheckout", { source: "landing_page", cta_text: text });
+          }
+          trackAndPush("booking_click", { cta_text: text, href: href });
+        }
+
+        if (href.indexOf("widget/form/") !== -1 || href === "#lead") {
+          if (typeof fbq === "function") {
+            fbq("track", "Contact", { source: "landing_page", cta_text: text });
+            fbq("track", "Lead", { source: "landing_page", cta_text: text });
+          }
+          trackAndPush("lead_intent_click", { cta_text: text, href: href });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
