@@ -580,36 +580,22 @@
   </footer>
   <script>
     (function () {
-      function trackAndPush(eventName, payload) {
-        if (typeof fbq === "function") {
-          fbq("trackCustom", eventName, payload || {});
-        }
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-          event: eventName,
-          meta_payload: payload || {}
-        });
-      }
-
       document.addEventListener("click", function (event) {
         var link = event.target.closest("a[href]");
         if (!link) return;
         var href = link.getAttribute("href") || "";
-        var text = (link.textContent || "").trim();
 
         if (href.indexOf("widget/booking/") !== -1) {
           if (typeof fbq === "function") {
-            fbq("track", "InitiateCheckout", { source: "landing_page", cta_text: text });
+            fbq("track", "InitiateCheckout");
           }
-          trackAndPush("booking_click", { cta_text: text, href: href });
         }
 
         if (href.indexOf("widget/form/") !== -1 || href === "#lead") {
           if (typeof fbq === "function") {
-            fbq("track", "Contact", { source: "landing_page", cta_text: text });
-            fbq("track", "Lead", { source: "landing_page", cta_text: text });
+            fbq("track", "Contact");
+            fbq("track", "Lead");
           }
-          trackAndPush("lead_intent_click", { cta_text: text, href: href });
         }
       });
     })();
